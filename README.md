@@ -86,5 +86,5 @@ Order Manager is a simple web application designed for managing orders and produ
 
 ### Usage
 
-- Access the application in your web browser at `http://localhost:5173` (or the port specified by the Vue.js dev server).
+- Access the application in your web browser at `http://localhost:5174` (or the port specified by the Vue.js dev server).
 - Use the application to manage orders and products.
