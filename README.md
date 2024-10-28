@@ -36,7 +36,7 @@ Order Manager is a simple web application designed for managing orders and produ
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/order-manager.git
+   git clone https://github.com/AlessioVeronico/orders-manager.git
    cd order-manager
    ```
 
