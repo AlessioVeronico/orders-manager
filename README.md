@@ -44,9 +44,9 @@ Order Manager is a simple web application designed for managing orders and produ
    - Open pgAdmin and create a new database called `laravel`.
 
 3. **Frontend Setup**:
-   - Navigate to the vue directory:
+   - Navigate to the frontend directory:
      ```bash
-     cd vue
+     cd frontend
      ```
    - Install dependencies:
      ```bash
@@ -58,9 +58,9 @@ Order Manager is a simple web application designed for managing orders and produ
      ```
 
 4. **Backend Setup**:
-   - Navigate to the laravel directory:
+   - Navigate to the backend directory:
      ```bash
-     cd laravel
+     cd backend
      ```
    - Install dependencies using Composer:
      ```bash
@@ -72,7 +72,7 @@ Order Manager is a simple web application designed for managing orders and produ
      DB_HOST=127.0.0.1
      DB_PORT=5432
      DB_DATABASE=laravel
-     DB_USERNAME=your_username
+     DB_USERNAME=postgres
      DB_PASSWORD=your_password
      ```
    - Run migrations to set up the database:
