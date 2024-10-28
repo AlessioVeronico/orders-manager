@@ -33,12 +33,12 @@ const edit = () => {
         <VCard class="mt-4 mb-4">
             <VCardTitle class="d-flex justify-space-between align-center">
                 <VRow cols="12">
-                    <VCol sm="9">
+                    <VCol sm="12" md="9">
                         <div class="text-h5 text-medium-emphasis ps-2">
                             ORDER {{ props.order.id }}
                         </div>
                     </VCol>
-                    <VCol sm="3">
+                    <VCol sm="12" md="3">
                         <VBtn
                             icon="mdi-pencil"
                             variant="text"
@@ -57,7 +57,7 @@ const edit = () => {
             <VCardText>
                 <VDivider />
                 <VRow cols="12">
-                    <VCol sm="4">
+                    <VCol sm="12" md="4">
                         <VList class="card-list mt-2">
                             <VListItem>
                             <VListItemSubtitle>
@@ -71,7 +71,7 @@ const edit = () => {
                             </VListItem>
                         </VList>
                     </VCol>
-                    <VCol sm="4">
+                    <VCol md="4" sm="12">
                         <VList class="card-list mt-2">
                             <VListItem>
                             <VListItemSubtitle>
@@ -85,7 +85,7 @@ const edit = () => {
                             </VListItem>
                         </VList>
                     </VCol>
-                    <VCol sm="4">
+                    <VCol md="4" sm="12">
                         <VList class="card-list mt-2">
                             <VListItem>
                             <VListItemSubtitle>
@@ -99,7 +99,7 @@ const edit = () => {
                     </VCol>
                 </VRow>
                 <VRow cols="12">
-                    <VCol sm="12">
+                    <VCol sm="12" md="12">
                         <VList class="card-list mt-2">
                             <VListItem>
                             <VListItemSubtitle>

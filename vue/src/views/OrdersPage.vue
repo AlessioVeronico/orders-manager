@@ -71,13 +71,13 @@ onMounted(() => {
 });
 </script>
 <template>
-    <div>
+    <div class="ml-4 mr-4">
         <div v-if="!loadingOrders">
             <Filter @create-order="createOrder" @filtered-list="updateList" @reset-filter="fetchOrders"/>
-            <VDivider />
+            <VDivider class="mt-4"/>
             <div v-if="orders.length" >
                 <VRow cols="12">
-                    <VCol sm="6" v-for="order in orders">
+                    <VCol sm="12" md="6" v-for="order in orders">
                         <OrderCard
                             :order="order"
                             @archived="removeOrderArchived"

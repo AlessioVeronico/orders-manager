@@ -71,14 +71,14 @@ const close = () => {
                 <VCardText>
                     <VDivider />
                     <VRow cols="12">
-                        <VCol sm="3">
+                        <VCol sm="12" md="4">
                             <VTextField
                                 v-model="props.order.name"
                                 label="Name"
                                 :rules="[requiredField]"
                             />
                         </VCol>
-                        <VCol sm="3">
+                        <VCol sm="12" md="4">
                             <VTextField 
                                 v-model="props.order.date" 
                                 label="Date"
@@ -88,7 +88,7 @@ const close = () => {
                         </VCol>
                     </VRow>
                     <VRow cols="12">
-                        <VCol sm="6">
+                        <VCol sm="12" md="12">
                             <VSelect
                                 v-model="props.order.selectedProductsIds"
                                 label="PRODUCTS"
@@ -103,7 +103,7 @@ const close = () => {
                         </VCol>
                     </VRow>
                     <VRow cols="12">
-                        <VCol sm="12">
+                        <VCol sm="12" md="12">
                             <VTextarea
                                 v-model="props.order.description"
                                 label="Description"

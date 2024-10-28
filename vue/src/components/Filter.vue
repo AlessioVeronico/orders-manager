@@ -39,44 +39,44 @@ const createOrder = () => {
 
 <template>
     <VRow cols="12" class="mt-10">
-        <VCol sm="2" offset="2">
+        <VCol md="3" sm="10">
             <VTextField
                 v-model="filters.name"
                 :disabled="loadingFilters"
                 label="Name"
             />
         </VCol>
-        <VCol sm="2">
+        <VCol md="3" sm="10">
             <VTextField
                 v-model="filters.description"
                 :disabled="loadingFilters"
                 label="Description"
             />
         </VCol>
-        <VCol sm="2">
+        <VCol md="3" sm="10">
             <VTextField 
                 v-model="filters.date" 
                 label="Date"
                 type="date"
             />
         </VCol>
-        <VCol sm="3">
+        <VCol md="3" sm="10">
             <VRow cols="12">
-                <VCol sm="3" offset="3">
+                <VCol md="3" sm="3" offset="3">
                     <VBtn
                         icon="mdi-magnify"
                         color="primary"
                         @click="fetchOrdersFiltered"
                     />
                 </VCol>
-                <VCol sm="3">
+                <VCol md="3" sm="3">
                     <VBtn
                         text="Reset"
                         color="error"
                         @click="resetFilters"
                     />
                 </VCol>
-                <VCol sm="3">
+                <VCol md="3" sm="3">
                     <VBtn
                         text="Create"
                         color="success"
