@@ -51,7 +51,7 @@ const archive = async (id) => {
     deletingProduct.value = true;
     try {
         let res = await deleteProduct(id);
-        products.value = products.value.filter(p => p.id === id);
+        products.value = products.value.filter(p => p.id !== id);
     } catch(error) {
         console.error(error)
     }
