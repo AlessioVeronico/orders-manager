@@ -51,7 +51,7 @@ const createOrder = () => {
 };
 
 const removeOrderArchived = (id) => {
-    orders.value = orders.value.filter(o => o.id === id);
+    orders.value = orders.value.filter(o => o.id !== id);
 };
 
 const editOrder = (id) => {
@@ -62,7 +62,7 @@ const editOrder = (id) => {
 
 const closeOrderModal = (order) => {
     showOrderModal.value = false;
-    if(order && !orders.value.find(o => o.id === order.id)) orders.value.push(order);
+    if(order && !orders.value.find(o => o.id === order.id)) orders.value.unshift(order);
 };
 
 onMounted(() => {
