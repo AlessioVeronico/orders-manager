@@ -1,7 +1,7 @@
 <script setup>
 import { getOrdersList, getProductList } from '@/api';
 import { ref, onMounted } from 'vue';
-import { VProgressCircular, VCard, VDivider } from 'vuetify/lib/components/index.mjs';
+import { VProgressCircular, VDivider } from 'vuetify/lib/components/index.mjs';
 import Filter from '../components/Filter.vue'
 import OrderModal from '@/components/OrderModal.vue';
 import OrderCard from '@/components/OrderCard.vue';

@@ -1,7 +1,7 @@
 <script setup>
 import { getOrdersListFiltered } from '@/api';
-import { ref, computed } from 'vue';
-import { VTextField, VDatePicker, VBtn, VCol, VRow } from 'vuetify/lib/components/index.mjs';
+import { ref} from 'vue';
+import { VTextField, VBtn, VCol, VRow } from 'vuetify/lib/components/index.mjs';
 
 const loadingFilters = ref(false);
 const filters = ref({

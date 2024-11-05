@@ -2,7 +2,7 @@
 import { saveOrder } from '@/api';
 import { requiredField } from '@/common/utils';
 import { ref } from 'vue';
-import { VTextField, VDatePicker, VBtn, VCol, VRow, VTextarea } from 'vuetify/lib/components/index.mjs';
+import { VTextField, VBtn, VCol, VRow, VTextarea } from 'vuetify/lib/components/index.mjs';
 
 const props = defineProps({
   order: {

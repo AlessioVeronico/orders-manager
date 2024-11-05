@@ -1,7 +1,7 @@
 <script setup>
 import { deleteOrder } from '@/api';
-import { ref, computed } from 'vue';
-import { VTextField, VDatePicker, VBtn, VCol, VRow, VTextarea } from 'vuetify/lib/components/index.mjs';
+import { ref } from 'vue';
+import { VBtn, VCol, VRow } from 'vuetify/lib/components/index.mjs';
 
 const props = defineProps({
   order: {
@@ -16,7 +16,7 @@ const deletingOrder = ref(false);
 const archive = async () => {
     deletingOrder.value = true;
     try {
-        let res = await deleteOrder(props.order.id);
+        await deleteOrder(props.order.id);
         emit("archived", props.order.id);
     } catch (error) {
         console.error(error);

@@ -2,14 +2,9 @@
 import { deleteProduct, getProductList, saveProduct } from '@/api';
 import { ref, onMounted } from 'vue';
 import { VProgressCircular, VCard, VDivider } from 'vuetify/lib/components/index.mjs';
-import { requiredField } from '@/common/utils';
-
 
 const loadingProducts = ref(false);
-const deletingProduct = ref(false);
-const savingProduct = ref(false);
 const products = ref([]);
-const showErrors = ref(false);
 
 const fetchProducts = async () => {
     loadingProducts.value = true;
@@ -24,19 +19,19 @@ const fetchProducts = async () => {
 
 const initSaving = async (product) => {
     if(product.name && product.price) save(product);
-    else showErrors.value = true;
+    else product.showErrors = true;
 }
 
 const save = async (product) => {
-    showErrors.value = false;
-    savingProduct.value = true;
+    product.showErrors = false;
+    product.saving = true;
     try {
         let res = await saveProduct(product);
         product.id = res.id;
     } catch(error) {
         console.error(error)
     }
-    savingProduct.value = false;
+    product.saving = false;
 };
 
 const addProduct = () => {
@@ -47,15 +42,20 @@ const addProduct = () => {
     });
 };
 
-const archive = async (id) => {
-    deletingProduct.value = true;
+const remove = (product) => {
+    if(product.id) archive(product);
+    else products.value = products.value.filter(p => p.id !== null);
+};
+
+const archive = async (product) => {
+    product.deleting = true;
     try {
-        let res = await deleteProduct(id);
-        products.value = products.value.filter(p => p.id !== id);
+        await deleteProduct(product.id);
+        products.value = products.value.filter(p => p.id !== product.id);
     } catch(error) {
         console.error(error)
     }
-    deletingProduct.value = false;
+    product.deleting = false;
 };
 
 onMounted(() => {
@@ -68,8 +68,8 @@ onMounted(() => {
             <VBtn @click="addProduct" color="primary" text="ADD" class="mt-4"/>
             <VDivider class="mt-4 mb-4"/>
             <VRow cols="12">
-                <VCol v-for="product in products" md="4" cols="12">
-                    <VCard>
+                <VCol v-for="(product, index) in products" md="4" cols="12">
+                    <VCard :key="index">
                         <VCardTitle>
                             <div class="text-medium-emphasis ps-2">
                                 {{ product.id ? 'UPDATE' : 'CREATE' }} PRODUCT {{ product.id ? `(ID: ${product.id})` : '' }}
@@ -79,15 +79,14 @@ onMounted(() => {
                                 variant="text"
                                 color="primary"
                                 @click="initSaving(product)"
-                                :loading="savingProduct"
+                                :loading="product.saving"
                             />
                             <VBtn
-                                v-if="product.id"
                                 icon="mdi-trash-can"
                                 variant="text"
                                 color="error"
-                                @click="archive(product.id)"
-                                :loading="deletingProduct"
+                                @click="remove(product)"
+                                :loading="product.deleting"
                             />
                         </VCardTitle>
                         <VCardText>
@@ -108,7 +107,7 @@ onMounted(() => {
                                     />
                                 </VCol>
                             </VRow>
-                            <h4 v-if="showErrors" class="mt-5" style="color: red;" >
+                            <h4 v-if="product.showErrors" class="mt-5" style="color: red;" >
                                 Insert Every Field!
                             </h4>
                         </VCardText>
