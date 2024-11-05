@@ -28,7 +28,7 @@ const emit = defineEmits(["close"]);
 
 const initSaving = async  () => {
     let isValid = await orderForm.value.validate();
-    if(isValid) save();
+    if(isValid.valid) save();
 };
 
 const save = async () => {
