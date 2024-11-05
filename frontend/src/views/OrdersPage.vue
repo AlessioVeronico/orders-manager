@@ -77,7 +77,7 @@ onMounted(() => {
             <VDivider class="mt-4"/>
             <div v-if="orders.length" >
                 <VRow cols="12">
-                    <VCol sm="12" md="6" v-for="order in orders">
+                    <VCol cols="12" md="6" v-for="order in orders">
                         <OrderCard
                             :order="order"
                             @archived="removeOrderArchived"

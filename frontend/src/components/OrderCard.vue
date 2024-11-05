@@ -33,12 +33,12 @@ const edit = () => {
         <VCard class="mt-4 mb-4">
             <VCardTitle class="d-flex justify-space-between align-center">
                 <VRow cols="12">
-                    <VCol sm="12" md="9">
+                    <VCol cols="12" md="9">
                         <div class="text-h5 text-medium-emphasis ps-2">
                             ORDER {{ props.order.id }}
                         </div>
                     </VCol>
-                    <VCol sm="12" md="3">
+                    <VCol cols="12" md="3">
                         <VBtn
                             icon="mdi-pencil"
                             variant="text"

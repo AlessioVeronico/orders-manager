@@ -68,7 +68,7 @@ onMounted(() => {
             <VBtn @click="addProduct" color="primary" text="ADD" class="mt-4"/>
             <VDivider class="mt-4 mb-4"/>
             <VRow cols="12">
-                <VCol v-for="product in products" md="4" sm="12">
+                <VCol v-for="product in products" md="4" cols="12">
                     <VCard>
                         <VCardTitle>
                             <div class="text-medium-emphasis ps-2">
@@ -93,13 +93,13 @@ onMounted(() => {
                         <VCardText>
                             <VDivider class="mb-3"/>
                             <VRow cols="12">
-                                <VCol md="6" sm="12">
+                                <VCol md="6" cols="12">
                                     <VTextField
                                         v-model="product.name"
                                         label="Name"
                                     />
                                 </VCol>
-                                <VCol md="6" sm="12">
+                                <VCol md="6" cols="12">
                                     <VTextField
                                         v-model="product.price"
                                         label="Price"
